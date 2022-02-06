@@ -4,11 +4,14 @@
     <!-- <Profile/> -->
     <AddTask @add-Expense="addExpense"/>
     <Expenses :expenses="expenses"/>
+    <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 import Expenses from './components/Expenses.vue'
 import Profile from './components/Profile.vue'
 import Chart from './components/Chart.vue'
@@ -17,10 +20,12 @@ export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     Expenses, 
     Profile,
     Chart,
     AddTask,
+    Footer
   },
   data(){
     return {
