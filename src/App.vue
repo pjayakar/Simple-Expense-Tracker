@@ -1,0 +1,111 @@
+<template>
+  <div class="container">
+    <Header/>
+    <!-- <Profile/> -->
+    <AddTask @add-Expense="addExpense"/>
+    <Expenses :expenses="expenses"/>
+  </div>
+</template>
+
+<script>
+import Header from './components/Header.vue'
+import Expenses from './components/Expenses.vue'
+import Profile from './components/Profile.vue'
+import Chart from './components/Chart.vue'
+import AddTask from './components/AddExpense.vue'
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Expenses, 
+    Profile,
+    Chart,
+    AddTask,
+  },
+  data(){
+    return {
+      expenses: [],
+    }
+  },
+  methods: {
+    addExpense(expense){
+      this.expenses = [...this.expenses, expense]
+    }
+  },
+  created(){
+    this.expenses = [
+      {
+        id: 1,
+        text: 'Groceries',
+        amount: 335,
+      },
+      {
+        id: 2,
+        text: 'Pharmacy',
+        amount: 150,
+      },
+      {
+        id: 3,
+        text: 'Walmart',
+        amount: 1500,
+      },
+      {
+        id: 4,
+        text: 'Hardware Supplies',
+        amount: 500,
+      },
+      {
+        id: 5,
+        text: 'Food',
+        amount: 750,
+      },
+    ]
+  },
+
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+</style>

@@ -1,0 +1,22 @@
+{
+  "name": "expense-tracker",
+  "version": "0.1.0",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "chart.js": "2.7.2",
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0",
+    "vue-chartjs": "^3.2.1",
+    "vue-google-charts": "^0.3.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  }
+}
